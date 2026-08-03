@@ -14,3 +14,6 @@ logs/
 # OS Files
 .DS_Store
 Thumbs.db
+
+# Hadoop checksum files
+*.crc
