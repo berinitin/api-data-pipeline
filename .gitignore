@@ -17,3 +17,10 @@ Thumbs.db
 
 # Hadoop checksum files
 *.crc
+
+# Generated data
+data/silver/
+data/gold/
+
+# Jupyter checkpoints
+.ipynb_checkpoints/

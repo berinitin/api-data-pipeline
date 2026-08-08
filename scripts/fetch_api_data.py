@@ -1,13 +1,21 @@
 import requests
-import json
 
-URL = "https://jsonplaceholder.typicode.com/posts"
+def fetch_api_data(url):
+    try:
+        response = requests.get(url, timeout=10)
 
-response = requests.get(URL)
+        response.raise_for_status()
 
-data = response.json()
+        data = response.json()
 
-with open("data/raw/posts.json", "w") as file:
-    json.dump(data, file, indent=4)
+    except Exception as e:
+        print(f"API Error: {e}")
+        return None
 
-print("Raw data saved successfully!")
+    return data
+
+url = "https://jsonplaceholder.typicode.com/posts"
+
+data = fetch_api_data(url)
+
+print(type(data))
